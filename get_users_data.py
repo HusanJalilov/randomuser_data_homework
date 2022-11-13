@@ -15,6 +15,6 @@ def get_users_data(data:dict) -> list:
     s=data['results']
     m=[]
     for i in s:
-        m.append({"first_name":i['name']['first'],"last_name": i["name"]["last"],"last_name": i["name"]["last"],"phone_number": user["phone"]})
+        m.append({"first_name":i['name']['first'],"last_name": i["name"]["last"],"last_name": i["name"]["last"],"phone_number": i["phone"]})
 
     return m
