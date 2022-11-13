@@ -1,11 +1,21 @@
-import get_data
 
-def get_email(data:dict) -> list:
+import json
+
+def get_email(filename:str) -> dict:
     """
-    Take the email of the users and return the list.
+    You are given a filename. Read the JSON data from the file and return the dictionary.
 
     Args:
-        data(dict): data
+        filename(str): file name
     Returns:
-        list: users email
+        dict: JSON data
     """
+    
+
+    s=json.loads(filename)['results']
+    d=''
+    for i in range(len(s)):
+        d+=s[i].get('email')+'\n'
+    return d[:-1]
+data=open("randomuser_data.json").read()
+print(get_data(data))
