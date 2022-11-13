@@ -10,11 +10,11 @@ def get_data(filename:str) -> dict:
     Returns:
         dict: JSON data
     """
-    
+    filename=open(filename).read()
+
     s=json.loads(filename)['results']
     d=''
     for i in s:
         d+=str(i)
     m=json.dumps(d,indent=4)  
     return m
-filename=open("randomuser_data.json").read()
