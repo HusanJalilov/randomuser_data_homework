@@ -1,3 +1,4 @@
+import email
 import get_data
 
 def get_email(data:dict) -> list:
