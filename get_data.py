@@ -1,5 +1,5 @@
 import json
-# from textwrap import indent
+from textwrap import indent
 
 def get_data(filename:str) -> dict:
     """
@@ -10,11 +10,11 @@ def get_data(filename:str) -> dict:
     Returns:
         dict: JSON data
     """
-    filename=open("randomuser_data.json").read()
-
+    
     s=json.loads(filename)['results']
     d=''
     for i in s:
         d+=str(i)
     m=json.dumps(d,indent=4)  
     return m
+filename=open("randomuser_data.json").read()
